@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="firebaseApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js type="text/javascript"></script>
+    <!-- Firebase -->
+    <script src=https://cdn.firebase.com/js/client/2.2.4/firebase.js></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- AngularFire -->
+    <script src=https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js></script>
+    <script src=app.js></script>
+
+
+
+</head>
+<body ng-controller="FireBaseController">
+<form action="" ng-submit="addTodo()">
+    <input type="text" ng-model="todo"/>
+</form>
+
+<ul>
+    <li ng-repeat="item in list">
+        <i class="fa fa-times" ng-click="removeTodo(item)"></i> <span ng-class="{strike:item.done}" ng-click="markOff(item)">{{item.task}}</span>
+    </li>
+
+</ul>
+
+<!--<div>-->
+    <!--<label for="usd">USD to Bitcoin</label><input id="usd" type="text" placeholder="usd to convert" ng-model="usd"/>-->
+    <!--<select ng-change="calculate()" ng-model="currency" name="cur" id="cur">-->
+        <!--<option value="bitcoin">BTC</option>-->
+        <!--<option value="dogecoin">DGC</option>-->
+        <!--<option value="litecoin">LTC</option>-->
+    <!--</select>-->
+
+    <!--{{(data.bid) * (usd) | currency}}-->
+
+<!--</div>-->
+
+</body>
+</html>
